@@ -921,12 +921,3 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   .hero h1 { font-size: 32px; }
   body { font-size: 18px; }
 }
-
-
-/* AI 생성 이미지 표시 */
-.ai-note {
-  margin: 14px 0 0;
-  font-size: 13px;
-  line-height: 1.6;
-  color: var(--ink-soft, #777);
-}
