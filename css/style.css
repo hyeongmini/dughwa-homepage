@@ -503,6 +503,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 
 /* ---------- 아스콘의 재료: 완성품(중앙)-재료(동서남북) 다이어그램, 마우스오버로 설명 전환 ---------- */
 .material-showcase {
+  position: relative;
   margin-top: 24px;
   background: var(--card-bg);
   border: 1px solid var(--border);
