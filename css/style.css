@@ -957,3 +957,15 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .safety-goal p { margin: 0; font-size: 21px; line-height: 1.7; color: var(--ink); }
 .safety-goal strong { color: var(--accent); }
 @media (max-width: 760px) { .safety-goals { grid-template-columns: 1fr; } .safety-lead { font-size: 18px; padding: 20px; } .safety-list li { padding: 18px 18px; gap: 14px; } .safety-list p { font-size: 17px; } .safety-goal p { font-size: 18px; } }
+
+/* 안전보건경영방침 원본 문서 보기 */
+.safety-original-desc { font-size: 18px; color: var(--ink-soft); margin: -18px 0 26px; }
+.safety-original { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; }
+.safety-doc { display: block; width: 340px; max-width: 100%; text-align: center; color: var(--ink); font-weight: 600; font-size: 17px; }
+.safety-doc img { width: 100%; height: auto; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 14px 34px rgba(15,30,25,.16); transition: transform .2s ease, box-shadow .2s ease; background: #fff; }
+.safety-doc:hover img { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(15,30,25,.22); }
+.safety-doc span { display: block; margin-top: 14px; }
+.safety-download-wrap { text-align: center; margin-top: 34px; }
+.safety-download { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff; font-size: 18px; font-weight: 700; padding: 14px 30px; border-radius: 999px; box-shadow: 0 8px 20px rgba(15,122,92,.28); transition: background .2s ease, transform .2s ease; }
+.safety-download::before { content: '↓'; font-size: 20px; }
+.safety-download:hover { background: var(--accent-dark); transform: translateY(-2px); }
