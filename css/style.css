@@ -984,3 +984,24 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .pavement-visual:hover .layer-base:hover, .layer-base:focus-visible { flex-grow: 26; }
 .pavement-layer span { transition: transform .3s ease; transform-origin: left center; }
 .pavement-layer:hover span, .pavement-layer:focus-visible span { transform: scale(1.15); }
+
+/* ---------- 생산 품목 5칸: 제품별 색 + 노면 질감, 마우스를 올리면 해당 블록이 커짐 ---------- */
+.comparison-photo-grid { overflow: visible; background: none; border-radius: 0; }
+.comparison-grid { gap: 14px; }
+.comparison-cell:nth-child(1) { --c1: #4d6a86; --c2: #2b3d52; }
+.comparison-cell:nth-child(2) { --c1: #33b27a; --c2: #1d8658; }
+.comparison-cell:nth-child(3) { --c1: #ee6a52; --c2: #c13a26; }
+.comparison-cell:nth-child(4) { --c1: #4d8df0; --c2: #2c5fc0; }
+.comparison-cell:nth-child(5) { --c1: #1fb4c9; --c2: #0f8696; }
+.comparison-grid .comparison-cell {
+  border: none;
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--c1) 88%, transparent), color-mix(in srgb, var(--c2) 80%, transparent)),
+    url("../img/pavement/surface.jpg?v=4") center / cover;
+  box-shadow: 0 8px 20px rgba(15,30,25,.12);
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+}
+.comparison-grid .comparison-cell:hover { transform: scale(1.07); z-index: 5; box-shadow: 0 24px 48px rgba(15,30,25,.30); }
+.comparison-grid .comparison-overlay { background: linear-gradient(135deg, var(--c1), var(--c2)); border-radius: 18px; }
+@media (hover: none) { .comparison-grid .comparison-cell:hover { transform: none; } }
