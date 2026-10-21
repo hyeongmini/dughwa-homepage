@@ -985,23 +985,28 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .pavement-layer span { transition: transform .3s ease; transform-origin: left center; }
 .pavement-layer:hover span, .pavement-layer:focus-visible span { transform: scale(1.15); }
 
-/* ---------- 생산 품목 5칸: 제품별 색 + 노면 질감, 마우스를 올리면 해당 블록이 커짐 ---------- */
-.comparison-photo-grid { overflow: visible; background: none; border-radius: 0; }
-.comparison-grid { gap: 14px; }
-.comparison-cell:nth-child(1) { --c1: #4d6a86; --c2: #2b3d52; }
-.comparison-cell:nth-child(2) { --c1: #33b27a; --c2: #1d8658; }
-.comparison-cell:nth-child(3) { --c1: #ee6a52; --c2: #c13a26; }
-.comparison-cell:nth-child(4) { --c1: #4d8df0; --c2: #2c5fc0; }
-.comparison-cell:nth-child(5) { --c1: #1fb4c9; --c2: #0f8696; }
-.comparison-grid .comparison-cell {
-  border: none;
-  border-radius: 18px;
+/* ---------- 생산 품목 5칸: 한 가지 색(청회색) + 공장 사진 배경, 얇은 격자, 마우스를 올리면 밝아지며 커짐 ---------- */
+.comparison-photo-grid {
+  overflow: visible;
+  border-radius: 14px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--c1) 88%, transparent), color-mix(in srgb, var(--c2) 80%, transparent)),
-    url("../img/pavement/surface.jpg?v=4") center / cover;
-  box-shadow: 0 8px 20px rgba(15,30,25,.12);
-  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease;
+    linear-gradient(rgba(44,58,76,.80), rgba(44,58,76,.84)),
+    url("../img/products-bg.jpg") center / cover;
 }
-.comparison-grid .comparison-cell:hover { transform: scale(1.07); z-index: 5; box-shadow: 0 24px 48px rgba(15,30,25,.30); }
-.comparison-grid .comparison-overlay { background: linear-gradient(135deg, var(--c1), var(--c2)); border-radius: 18px; }
+.comparison-grid { gap: 0; }
+.comparison-grid .comparison-cell {
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, background .3s ease;
+}
+.comparison-grid .comparison-cell:first-child { border-top-left-radius: 14px; border-bottom-left-radius: 14px; }
+.comparison-grid .comparison-cell:nth-child(3) { border-top-right-radius: 14px; }
+.comparison-grid .comparison-cell:nth-child(5) { border-bottom-right-radius: 14px; }
+.comparison-grid .comparison-cell:hover { transform: scale(1.06); z-index: 5; background: rgba(255,255,255,.96); box-shadow: 0 22px 44px rgba(20,30,45,.35); border-radius: 12px; }
+.comparison-grid .comparison-overlay { background: rgba(255,255,255,.96); border-radius: 12px; }
+.comparison-grid .comparison-overlay h5 { color: #1d2a39; }
+.comparison-grid .comparison-overlay h5 em { color: rgba(29,42,57,.62); }
+.comparison-grid .comparison-overlay p { color: #2f3f50; }
 @media (hover: none) { .comparison-grid .comparison-cell:hover { transform: none; } }
