@@ -112,12 +112,22 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
 }
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-size: 17px;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: #fff;
   margin-bottom: 16px;
-  text-shadow: 0 1px 4px rgba(0,0,0,.35);
+  text-shadow: 0 1px 6px rgba(0,0,0,.6);
+}
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 3px;
+  background: #3fd0a2;
+  box-shadow: 0 1px 4px rgba(0,0,0,.45);
 }
 .hero h1 {
   font-size: 50px;
@@ -923,5 +933,3 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   body { font-size: 18px; }
 }
 
-/* AI 생성 이미지 표시 */
-.ai-tag { position: absolute; top: 14px; right: 14px; z-index: 3; padding: 4px 12px; border: 1px solid rgba(255,255,255,.75); border-radius: 999px; background: rgba(15,30,25,.6); color: #fff; font-size: 13px; font-weight: 600; line-height: 1.4; letter-spacing: .01em; backdrop-filter: blur(2px); }
