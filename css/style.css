@@ -643,7 +643,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   padding-left: 20px;
   cursor: pointer;
   outline: none;
-  transition: filter .25s ease;
+  transition: filter .25s ease, flex-grow .45s cubic-bezier(.2,.7,.2,1);
 }
 .pavement-visual:hover .pavement-layer { filter: brightness(.5) saturate(.7); }
 .pavement-visual:hover .pavement-layer:hover,
@@ -707,7 +707,9 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
   overflow: hidden;
   background: linear-gradient(160deg, var(--accent-dark) 0%, var(--ink) 100%);
 }
-.comparison-grid { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); }
+.comparison-grid { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); }
+.comparison-grid .comparison-cell { grid-column: span 2; }
+.comparison-grid .comparison-cell:nth-child(n+4) { grid-column: span 3; }
 .comparison-cell {
   position: relative;
   min-height: 170px;
@@ -749,9 +751,12 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 
 @media (max-width: 760px) {
   .comparison-grid { grid-template-columns: repeat(2, 1fr); }
+  .comparison-grid .comparison-cell, .comparison-grid .comparison-cell:nth-child(n+4) { grid-column: auto; }
+  .comparison-grid .comparison-cell:last-child { grid-column: 1 / -1; }
 }
 @media (max-width: 480px) {
   .comparison-grid { grid-template-columns: 1fr; }
+  .comparison-grid .comparison-cell:last-child { grid-column: auto; }
 }
 
 /* ---------- 아스콘 제조 공정 (원본 공정도 이미지) ---------- */
@@ -973,3 +978,10 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 
 .hero-slideshow img { object-position: center 40%; }
 .page-banner .hero-bg img { object-position: center 45%; }
+
+/* 포장 구성: 마우스를 올린(또는 포커스한) 층이 더 크게 커지는 효과 */
+.pavement-visual:hover .layer-surface:hover, .layer-surface:focus-visible { flex-grow: 13; }
+.pavement-visual:hover .layer-binder:hover, .layer-binder:focus-visible { flex-grow: 13; }
+.pavement-visual:hover .layer-base:hover, .layer-base:focus-visible { flex-grow: 26; }
+.pavement-layer span { transition: transform .3s ease; transform-origin: left center; }
+.pavement-layer:hover span, .pavement-layer:focus-visible span { transform: scale(1.15); }
