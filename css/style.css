@@ -955,7 +955,7 @@ h3.pavement-title:first-of-type { margin-top: 8px; }
 .safety-goal { background: var(--card-bg); border: 1px solid var(--border); border-radius: 18px; padding: 28px 30px; }
 .safety-goal-num { display: inline-block; font-size: 15px; font-weight: 800; letter-spacing: .1em; color: #fff; background: var(--accent); border-radius: 999px; padding: 3px 12px; margin-bottom: 14px; }
 .safety-goal p { margin: 0; font-size: 21px; line-height: 1.7; color: var(--ink); }
-.safety-goal strong { color: var(--accent); }
+.safety-goal strong { color: var(--accent); white-space: nowrap; }
 @media (max-width: 760px) { .safety-goals { grid-template-columns: 1fr; } .safety-lead { font-size: 18px; padding: 20px; } .safety-list li { padding: 18px 18px; gap: 14px; } .safety-list p { font-size: 17px; } .safety-goal p { font-size: 18px; } }
 
 /* 안전보건경영방침 원본 문서 보기 */
